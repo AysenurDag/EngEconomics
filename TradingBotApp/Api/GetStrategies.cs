@@ -17,8 +17,8 @@ public class GetStrategies(ILogger<GetStrategies> logger)
     public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
     {
         logger.LogInformation("C# HTTP trigger function processed a request.");
-        string apiKey = "hoQ2IJ0nBsugYyOdYO9UuwDyWeMvMR6umHxSFS2ss2TmQf4H0EjHrtaAvH8yrI6i";
-        string apiSecret = "5nq9wQHdh3ulrGeBDXGuHOsrcc123jS89ImQ78mwsOvyjBonvzE6wT4bKZiD2CUI";
+        string apiKey = "Your binance apiKey";
+        string apiSecret = "Your binance secret apiKey";
         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
         dynamic data = JsonConvert.DeserializeObject(requestBody);
         string symbol = data?.symbol;
